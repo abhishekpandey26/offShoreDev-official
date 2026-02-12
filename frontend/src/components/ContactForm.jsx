@@ -23,22 +23,40 @@ const ContactForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setSubmitStatus(null);
 
-        // Simulate form submission
-        setTimeout(() => {
-            setSubmitStatus('success');
-            setIsSubmitting(false);
-            setFormData({
-                name: '',
-                email: '',
-                phone: '',
-                projectDescription: '',
+        try {
+            const response = await fetch('http://localhost:5001/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
             });
 
+            const data = await response.json();
+
+            if (response.ok) {
+                setSubmitStatus('success');
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    projectDescription: '',
+                });
+            } else {
+                setSubmitStatus('error');
+                console.error('Submission failed:', data.message);
+            }
+        } catch (error) {
+            setSubmitStatus('error');
+            console.error('Error submitting form:', error);
+        } finally {
+            setIsSubmitting(false);
             setTimeout(() => {
                 setSubmitStatus(null);
             }, 5000);
-        }, 1500);
+        }
     };
 
     return (
