@@ -103,8 +103,8 @@ const ContactForm = () => {
                                     </div>
                                     <div>
                                         <h4 className="font-bold text-gray-900 mb-1">Call Us</h4>
-                                        <a href="tel:+919876543210" className="text-primary hover:text-secondary transition-colors">
-                                            +91 98765 43210
+                                        <a href="tel:+917905587609" className="text-primary hover:text-secondary transition-colors">
+                                            +91 79055 87609
                                         </a>
                                     </div>
                                 </div>
@@ -185,7 +185,7 @@ const ContactForm = () => {
                                             onChange={handleChange}
                                             required
                                             className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                                            placeholder="+91 98765 43210"
+                                            placeholder="+91 79055 87609"
                                         />
                                     </div>
                                 </div>

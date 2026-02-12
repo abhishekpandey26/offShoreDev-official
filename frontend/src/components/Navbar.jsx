@@ -71,7 +71,7 @@ const Navbar = () => {
                             </Link>
                         ))}
                         <a
-                            href="tel:+919876543210"
+                            href="tel:+917905587609"
                             className="btn-primary flex items-center space-x-2"
                         >
                             <FaPhone className="text-sm" />
@@ -107,7 +107,7 @@ const Navbar = () => {
                             </Link>
                         ))}
                         <a
-                            href="tel:+919876543210"
+                            href="tel:+917905587609"
                             className="btn-primary flex items-center justify-center space-x-2"
                         >
                             <FaPhone className="text-sm" />

@@ -230,7 +230,7 @@ const ServicesPage = () => {
                         <a href="/#contact" className="bg-white text-primary hover:bg-gray-100 font-bold px-10 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 inline-block">
                             Contact Us Now
                         </a>
-                        <a href="tel:+919876543210" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-bold px-10 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 inline-block">
+                        <a href="tel:+917905587609" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-bold px-10 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 inline-block">
                             Call Us
                         </a>
                     </div>

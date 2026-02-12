@@ -140,7 +140,7 @@ This creates an optimized production build in the `dist` folder.
 ## 📱 Contact Information
 
 - **Email**: info@offshoredevlabs.com
-- **Phone**: +91 98765 43210
+- **Phone**: +91 79055 87609
 - **Address**: 123 Tech Park, Sector 5, Bangalore, Karnataka 560001, India
 
 ## 🌟 Key Features Implemented

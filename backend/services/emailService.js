@@ -5,35 +5,35 @@ dotenv.config();
 
 // Create transporter using Brevo SMTP
 const transporter = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST,
-    port: parseInt(process.env.EMAIL_PORT),
-    secure: false, // true for 465, false for other ports
-    auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-    },
+  host: process.env.EMAIL_HOST,
+  port: parseInt(process.env.EMAIL_PORT),
+  secure: false, // true for 465, false for other ports
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
+  },
 });
 
 // Verify transporter configuration
 transporter.verify((error, success) => {
-    if (error) {
-        console.error('Email transporter verification failed:', error);
-    } else {
-        console.log('✅ Email server is ready to send messages');
-    }
+  if (error) {
+    console.error('Email transporter verification failed:', error);
+  } else {
+    console.log('✅ Email server is ready to send messages');
+  }
 });
 
 /**
  * Send notification email to admin when new contact form is submitted
  */
 export const sendAdminNotification = async (contactData) => {
-    const { name, email, phone, projectDescription } = contactData;
+  const { name, email, phone, projectDescription } = contactData;
 
-    const mailOptions = {
-        from: `"Offshore Dev Labs Website" <${process.env.EMAIL_SENDER}>`,
-        to: process.env.NOTIFICATION_EMAIL,
-        subject: `🔔 New Contact Form Submission - ${name}`,
-        html: `
+  const mailOptions = {
+    from: `"Offshore Dev Labs Website" <${process.env.EMAIL_SENDER}>`,
+    to: process.env.NOTIFICATION_EMAIL,
+    subject: `🔔 New Contact Form Submission - ${name}`,
+    html: `
       <!DOCTYPE html>
       <html>
         <head>
@@ -134,29 +134,29 @@ export const sendAdminNotification = async (contactData) => {
         </body>
       </html>
     `,
-    };
+  };
 
-    try {
-        const info = await transporter.sendMail(mailOptions);
-        console.log('✅ Admin notification sent:', info.messageId);
-        return { success: true, messageId: info.messageId };
-    } catch (error) {
-        console.error('❌ Error sending admin notification:', error);
-        throw error;
-    }
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    console.log('✅ Admin notification sent:', info.messageId);
+    return { success: true, messageId: info.messageId };
+  } catch (error) {
+    console.error('❌ Error sending admin notification:', error);
+    throw error;
+  }
 };
 
 /**
  * Send confirmation email to the client
  */
 export const sendClientConfirmation = async (contactData) => {
-    const { name, email } = contactData;
+  const { name, email } = contactData;
 
-    const mailOptions = {
-        from: `"Offshore Dev Labs" <${process.env.EMAIL_SENDER}>`,
-        to: email,
-        subject: 'Thank you for contacting Offshore Dev Labs',
-        html: `
+  const mailOptions = {
+    from: `"Offshore Dev Labs" <${process.env.EMAIL_SENDER}>`,
+    to: email,
+    subject: 'Thank you for contacting Offshore Dev Labs',
+    html: `
       <!DOCTYPE html>
       <html>
         <head>
@@ -216,9 +216,9 @@ export const sendClientConfirmation = async (contactData) => {
               <p>In the meantime, feel free to explore our services and portfolio on our website.</p>
               
               <p><strong>Need immediate assistance?</strong><br>
-              📞 Call us: +91 98765 43210<br>
+              📞 Call us: +91 79055 87609<br>
               📧 Email: info@offshoredevlabs.com<br>
-              💬 WhatsApp: +91 98765 43210</p>
+              💬 WhatsApp: +91 79055 87609</p>
               
               <p>Best regards,<br>
               <strong>The Offshore Dev Labs Team</strong></p>
@@ -231,16 +231,16 @@ export const sendClientConfirmation = async (contactData) => {
         </body>
       </html>
     `,
-    };
+  };
 
-    try {
-        const info = await transporter.sendMail(mailOptions);
-        console.log('✅ Client confirmation sent:', info.messageId);
-        return { success: true, messageId: info.messageId };
-    } catch (error) {
-        console.error('❌ Error sending client confirmation:', error);
-        throw error;
-    }
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    console.log('✅ Client confirmation sent:', info.messageId);
+    return { success: true, messageId: info.messageId };
+  } catch (error) {
+    console.error('❌ Error sending client confirmation:', error);
+    throw error;
+  }
 };
 
 export default transporter;
