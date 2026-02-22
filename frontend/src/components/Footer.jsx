@@ -33,7 +33,8 @@ const Footer = () => {
                     <div>
                         <div className="flex items-center space-x-2 mb-4">
                             <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                                <span className="text-white font-bold text-xl">OD</span>
+                                {/* <span className="text-white font-bold text-xl">OD</span> */}
+                            <img src='/logo.png'/>
                             </div>
                             <div className="flex flex-col">
                                 <span className="text-lg font-bold">Offshore Dev Labs</span>
