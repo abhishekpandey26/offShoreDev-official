@@ -49,7 +49,8 @@ const Navbar = () => {
                     {/* Logo */}
                     <Link to="/" className="flex items-center space-x-2">
                         <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                            <span className="text-white font-bold text-xl">OD</span>
+                            {/* <span className="text-white font-bold text-xl">OD</span> */}
+                            <img src='/logo.png'/>
                         </div>
                         <div className="flex flex-col">
                             <span className="text-xl font-bold text-gray-900">Offshore Dev Labs</span>
