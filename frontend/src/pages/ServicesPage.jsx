@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { FaCode, FaMobileAlt, FaReact, FaPaintBrush, FaCogs, FaCheckCircle, FaRocket } from 'react-icons/fa';
 
 const ServicesPage = () => {
@@ -129,6 +130,17 @@ const ServicesPage = () => {
 
     return (
         <div className="min-h-screen pt-24">
+            <Helmet>
+                <title>Our Services | Offshore Dev Labs - Web, Mobile & Custom Software Development</title>
+                <meta name="description" content="Explore OffshoreDevLabs services: Web Development, Android App Development, React Native, UI/UX Design, and Custom Software Solutions. Expert offshore development team." />
+                <meta name="keywords" content="offshoredev services, offshoredevlabs services, web development services, android app development, react native development, UI/UX design services, custom software solutions, offshore development services" />
+                <link rel="canonical" href="https://offshoredevco.in/services" />
+                <meta property="og:title" content="Our Services | Offshore Dev Labs - Web, Mobile & Custom Software" />
+                <meta property="og:description" content="Expert web, mobile & custom software development services by OffshoreDevLabs." />
+                <meta property="og:url" content="https://offshoredevco.in/services" />
+                <meta property="og:image" content="https://offshoredevco.in/og-image.svg" />
+                <meta property="og:image:alt" content="Offshore Dev Labs Services - Web, Mobile & Custom Software" />
+            </Helmet>
             {/* Hero Section */}
             <section className="bg-gradient-to-br from-primary via-blue-600 to-secondary text-white py-20">
                 <div className="container mx-auto px-4">
